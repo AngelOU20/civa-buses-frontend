@@ -41,3 +41,28 @@ export const getBusById = async (id: number): Promise<Bus> => {
   }
 };
 
+export const createBus = async (busData: Omit<Bus, "id">): Promise<void> => {
+  const { brand, ...otherData } = busData;
+
+  const busRequest = {
+    ...otherData,
+    brandId: brand.id,
+  };
+
+  try {
+    const response = await fetch(`${VITE_API_URL}/bus`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(busRequest),
+    });
+
+    if (!response.ok) {
+      throw new Error("Error creating bus");
+    }
+  } catch (error) {
+    console.error("Failed to create bus:", error);
+    throw error;
+  }
+};
