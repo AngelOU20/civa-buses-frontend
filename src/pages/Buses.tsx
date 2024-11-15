@@ -1,5 +1,5 @@
 import { Bus } from "@/interfaces";
-import { getAllBuses } from "@/services";
+import { getAllBuses } from "@/services/bus";
 import { useEffect, useState, useRef } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import {
@@ -16,6 +16,7 @@ import {
   PageSizeSelect,
   DropdownMenu,
   DropdownItem,
+  CreateButton,
 } from "./Buses.styled";
 import { formatDate } from "@/utils/utils";
 import { SlOptions } from "react-icons/sl";
@@ -88,6 +89,9 @@ export const Buses = () => {
   return (
     <Container>
       <h1 style={{ textAlign: "center" }}>Listado de buses</h1>
+
+      <CreateButton to="/create-bus">Crear nuevo bus</CreateButton>
+
       <Table>
         <thead>
           <TableRow>
