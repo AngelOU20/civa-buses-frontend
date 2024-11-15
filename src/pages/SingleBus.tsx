@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { getBusById } from "@/services";
+import { getBusById } from "@/services/bus";
 import { Bus } from "@/interfaces";
 import { formatDate } from "@/utils/utils";
 import { BiArrowBack, BiBus } from "react-icons/bi";
