@@ -1,9 +1,34 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+`;
+
+export const CreateButton = styled(Link)`
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  margin: 1em 0;
+  font-size: 1.4rem;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  background-color: #ED1E7A;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    background-color: #A02380;
+    transform: scale(1.05);
+  }
+
+  &:active {
+    background-color: #A02380;
+  }
 `;
 
 export const Table = styled.table`
